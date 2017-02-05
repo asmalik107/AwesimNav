@@ -1,0 +1,3 @@
+rootProject.name = 'AwesimNav'
+
+include ':app'
