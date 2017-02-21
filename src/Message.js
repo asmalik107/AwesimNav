@@ -1,15 +1,35 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
+import {CardStack} from 'react-navigation';
+
+const {BackButton} = CardStack.Header
 
 class Message extends Component {
   static navigationOptions = {
-    title: 'Contacts',
+    title: 'Message',
+    header: ({goBack}) => {
+      let right = <Button title="Info"/>;
+      let left = <BackButton onPress={() => goBack(null)}/>
+      let style = {backgroundColor: 'blue'};
+      return {right, left, style}
+
+    }
   };
 
   render() {
+    const {navigate, goBack} = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <Text>Message</Text>
+        <Button
+          onPress={() => navigate('Settings')}
+          title="Settings"
+        />
+        <Button
+          onPress={() => goBack(null)}
+          title="Go back"
+        />
       </View>
     );
   }

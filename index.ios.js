@@ -7,16 +7,18 @@
 import React, {Component} from 'react';
 import {
   AppRegistry,
+  Button,
   StyleSheet,
   Text,
   View
 } from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import {CardStack, StackNavigator} from 'react-navigation';
 import Contacts from './src/Contacts';
 import Home from './src/Home';
 import Message from './src/Message';
 import Settings from './src/Settings';
 
+const {BackButton} = CardStack.Header
 
 const MainNavigator = StackNavigator({
     Home: {
@@ -43,6 +45,7 @@ const MainNavigator = StackNavigator({
     }
   },
   {
+    initialRouteName: 'Home',
     mode: 'modal',
     headerMode: 'screen'
   }
@@ -50,15 +53,15 @@ const MainNavigator = StackNavigator({
 
 
 const SecondNavigator = StackNavigator({
-    Home: {
+    Message: {
       screen: Message,
       navigationOptions: {
-        header: {
+/*        header: {
           visible: true
+        },*/
+        cardStack: {
+          gesturesEnabled: false
         }
-      },
-      cardStack: {
-        gesturesEnabled: false
       }
     },
     Settings: {
@@ -74,11 +77,11 @@ const SecondNavigator = StackNavigator({
     }
   },
   {
+    initialRouteName: 'Message',
     mode: 'modal',
     headerMode: 'screen'
   }
 );
-
 
 
 const SimpleApp = StackNavigator({
@@ -98,14 +101,17 @@ const SimpleApp = StackNavigator({
         }
       }
     },
-    Contacts: {screen: Contacts},
+    Contacts: {
+      screen: Contacts
+    },
   },
 
   {
     initialRouteName: 'HomeMain',
     headerMode: 'screen'
   }
-);
+  )
+  ;
 
 
 AppRegistry.registerComponent('AwesimNav', () => SimpleApp);
