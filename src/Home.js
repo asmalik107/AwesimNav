@@ -17,6 +17,10 @@ class Home extends Component {
           title="Contacts"
         />
         <Button
+          onPress={() => navigate('Second')}
+          title="Message"
+        />
+        <Button
           onPress={() => navigate('Settings')}
           title="Settings"
         />
@@ -31,7 +35,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   }
-})
+});
 
 
 export default Home;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-class Contacts extends Component {
+class Message extends Component {
   static navigationOptions = {
     title: 'Contacts',
   };
@@ -9,7 +9,7 @@ class Contacts extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Contacts</Text>
+        <Text>Message</Text>
       </View>
     );
   }
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Contacts;
+export default Message;

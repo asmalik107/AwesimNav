@@ -14,7 +14,8 @@ import {
 import {StackNavigator} from 'react-navigation';
 import Contacts from './src/Contacts';
 import Home from './src/Home';
-import Settings from './src/Settings'
+import Message from './src/Message';
+import Settings from './src/Settings';
 
 
 const MainNavigator = StackNavigator({
@@ -24,6 +25,9 @@ const MainNavigator = StackNavigator({
         header: {
           visible: true
         }
+      },
+      cardStack: {
+        gesturesEnabled: false
       }
     },
     Settings: {
@@ -31,6 +35,9 @@ const MainNavigator = StackNavigator({
       navigationOptions: {
         header: {
           visible: false
+        },
+        cardStack: {
+          gesturesEnabled: false
         }
       }
     }
@@ -42,6 +49,38 @@ const MainNavigator = StackNavigator({
 );
 
 
+const SecondNavigator = StackNavigator({
+    Home: {
+      screen: Message,
+      navigationOptions: {
+        header: {
+          visible: true
+        }
+      },
+      cardStack: {
+        gesturesEnabled: false
+      }
+    },
+    Settings: {
+      screen: Settings,
+      navigationOptions: {
+        header: {
+          visible: false
+        },
+        cardStack: {
+          gesturesEnabled: false
+        }
+      }
+    }
+  },
+  {
+    mode: 'modal',
+    headerMode: 'screen'
+  }
+);
+
+
+
 const SimpleApp = StackNavigator({
     HomeMain: {
       screen: MainNavigator,
@@ -51,8 +90,17 @@ const SimpleApp = StackNavigator({
         }
       }
     },
+    Second: {
+      screen: SecondNavigator,
+      navigationOptions: {
+        header: {
+          visible: false
+        }
+      }
+    },
     Contacts: {screen: Contacts},
   },
+
   {
     initialRouteName: 'HomeMain',
     headerMode: 'screen'
