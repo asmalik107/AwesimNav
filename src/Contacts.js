@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 
 class Contacts extends Component {
   static navigationOptions = {
-    title: 'Settings',
+    title: 'Contacts',
   };
 
   render() {

@@ -18,7 +18,14 @@ import Settings from './src/Settings'
 
 
 const MainNavigator = StackNavigator({
-    Home: {screen: Home},
+    Home: {
+      screen: Home,
+      navigationOptions: {
+        header: {
+          visible: true
+        }
+      }
+    },
     Settings: {
       screen: Settings,
       navigationOptions: {
@@ -36,7 +43,7 @@ const MainNavigator = StackNavigator({
 
 
 const SimpleApp = StackNavigator({
-    Home: {
+    HomeMain: {
       screen: MainNavigator,
       navigationOptions: {
         header: {
@@ -47,7 +54,7 @@ const SimpleApp = StackNavigator({
     Contacts: {screen: Contacts},
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'HomeMain',
     headerMode: 'screen'
   }
 );
