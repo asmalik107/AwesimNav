@@ -10,9 +10,15 @@ class Contacts extends Component {
   };
 
   render() {
+    const {navigate, goBack} = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <Text>Contacts</Text>
+        <Button
+          onPress={() => goBack(null)}
+          title="Go back"
+        />
       </View>
     );
   }

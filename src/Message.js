@@ -13,6 +13,9 @@ class Message extends Component {
       let style = {backgroundColor: 'blue'};
       return {right, left, style}
 
+    },
+    cardStack: {
+      gesturesEnabled: false
     }
   };
 

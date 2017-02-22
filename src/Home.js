@@ -1,9 +1,25 @@
 import React, {Component} from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+
+import {CardStack} from 'react-navigation';
+
+const {BackButton} = CardStack.Header
 
 class Home extends Component {
   static navigationOptions = {
     title: 'Home',
+    header: ({goBack}) => {
+      let right = <Button title="Info"/>;
+      let left = <BackButton onPress={() => goBack(null)}/>
+      let style = {backgroundColor: 'white'};
+      let title = <TextInput value="sdghsdghjsghjsdghjsd"
+        style={{width: 200, height: 40, borderColor: 'gray', borderWidth: 1}}
+      />
+
+
+      return {right, left, style, title}
+
+    },
   };
 
   render() {

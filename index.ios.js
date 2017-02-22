@@ -23,14 +23,6 @@ const {BackButton} = CardStack.Header
 const MainNavigator = StackNavigator({
     Home: {
       screen: Home,
-      navigationOptions: {
-        header: {
-          visible: true
-        }
-      },
-      cardStack: {
-        gesturesEnabled: false
-      }
     },
     Settings: {
       screen: Settings,
@@ -55,14 +47,6 @@ const MainNavigator = StackNavigator({
 const SecondNavigator = StackNavigator({
     Message: {
       screen: Message,
-      navigationOptions: {
-/*        header: {
-          visible: true
-        },*/
-        cardStack: {
-          gesturesEnabled: false
-        }
-      }
     },
     Settings: {
       screen: Settings,
