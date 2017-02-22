@@ -4,6 +4,12 @@ import {Button, StyleSheet, Text, View} from 'react-native';
 class Settings extends Component {
   static navigationOptions = {
     title: 'Settings',
+    header: {
+      visible: false
+    },
+    cardStack: {
+      gesturesEnabled: false
+    }
   };
 
   render() {

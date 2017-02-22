@@ -10,14 +10,14 @@ class Home extends Component {
     title: 'Home',
     header: ({goBack}) => {
       let right = <Button title="Info"/>;
-      let left = <BackButton onPress={() => goBack(null)}/>
+      //let left = <BackButton onPress={() => goBack(null)}/>
       let style = {backgroundColor: 'white'};
       let title = <TextInput value="sdghsdghjsghjsdghjsd"
         style={{width: 200, height: 40, borderColor: 'gray', borderWidth: 1}}
       />
 
 
-      return {right, left, style, title}
+      return {right, style, title}
 
     },
   };

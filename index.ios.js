@@ -25,15 +25,7 @@ const MainNavigator = StackNavigator({
       screen: Home,
     },
     Settings: {
-      screen: Settings,
-      navigationOptions: {
-        header: {
-          visible: false
-        },
-        cardStack: {
-          gesturesEnabled: false
-        }
-      }
+      screen: Settings
     }
   },
   {
@@ -49,15 +41,7 @@ const SecondNavigator = StackNavigator({
       screen: Message,
     },
     Settings: {
-      screen: Settings,
-      navigationOptions: {
-        header: {
-          visible: false
-        },
-        cardStack: {
-          gesturesEnabled: false
-        }
-      }
+      screen: Settings
     }
   },
   {
@@ -87,15 +71,13 @@ const SimpleApp = StackNavigator({
     },
     Contacts: {
       screen: Contacts
-    },
+    }
   },
 
   {
     initialRouteName: 'HomeMain',
     headerMode: 'screen'
-  }
-  )
-  ;
+  });
 
 
 AppRegistry.registerComponent('AwesimNav', () => SimpleApp);
